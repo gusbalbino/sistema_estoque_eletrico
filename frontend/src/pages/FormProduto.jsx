@@ -14,7 +14,7 @@ export default function FormProduto() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        await fetch('http://localhost:3001/api/produtos', {
+        await fetch('https://api-eletronexo.onrender.com/api/produtos', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form)

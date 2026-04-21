@@ -7,7 +7,7 @@ export default function Movimentacao() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/produtos')
+        fetch('https://api-eletronexo.onrender.com/api/produtos')
             .then(r => r.json())
             .then(data => {
                 setProdutos(data);
@@ -18,7 +18,7 @@ export default function Movimentacao() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await fetch('http://localhost:3001/api/movimentacoes', {
+        await fetch('https://api-eletronexo.onrender.com/api/movimentacoes', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form)

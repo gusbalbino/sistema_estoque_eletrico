@@ -10,7 +10,7 @@ export default function Dashboard() {
     const itensPorPagina = 8; // itens por pagina
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/produtos')
+        fetch('https://api-eletronexo.onrender.com/api/produtos')
             .then(r => r.json())
             .then(setProdutos);
     }, []);

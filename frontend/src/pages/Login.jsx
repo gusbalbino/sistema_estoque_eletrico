@@ -41,7 +41,7 @@ export default function Login() {
         const timeoutId = setTimeout(() => controller.abort(), 5000);
 
         try {
-            const resposta = await fetch('http://localhost:3001/api/login', {
+            const resposta = await fetch('https://api-eletronexo.onrender.com/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, senha }),

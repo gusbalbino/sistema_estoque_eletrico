@@ -4,7 +4,7 @@ export default function Historico() {
     const [logs, setLogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/historico')
+        fetch('https://api-eletronexo.onrender.com/api/historico')
             .then(r => r.json())
             .then(setLogs);
     }, []);

@@ -12,7 +12,7 @@ export default function CadastroUsuarios() {
 
     const carregarUsuarios = async () => {
         try {
-            const resposta = await fetch('http://localhost:3001/api/usuarios');
+            const resposta = await fetch('https://api-eletronexo.onrender.com/api/usuarios');
             const dados = await resposta.json();
             setUsuarios(dados);
         } catch (error) {
@@ -25,7 +25,7 @@ export default function CadastroUsuarios() {
     const handleRemover = async (id, emailUsuario) => {
         if (window.confirm(`Tem certeza que deseja remover o usuário ${emailUsuario}?`)) {
             try {
-                const resposta = await fetch(`http://localhost:3001/api/usuarios/${id}`, {
+                const resposta = await fetch(`https://api-eletronexo.onrender.com/api/usuarios/${id}`, {
                     method: 'DELETE'
                 });
                 if (resposta.ok) {
@@ -40,7 +40,7 @@ export default function CadastroUsuarios() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const resposta = await fetch('http://localhost:3001/api/usuarios', {
+            const resposta = await fetch('https://api-eletronexo.onrender.com/api/usuarios', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, senha, cargo })
